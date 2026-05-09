@@ -62,20 +62,27 @@
             margin-top: 40px;
             font-size: 14px;
             opacity: 0.7;
-        }
+        }@keyframes shine {
+    0% { text-shadow: 0 0 5px #FFD700; }
+    50% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
+    100% { text-shadow: 0 0 5px #FFD700; }
+}
+h1 {
+    animation: shine 2s infinite;
+}
     </style>
 </head>
-<body>
+<body><img src="hamed.jpg" alt="Hamed Roi de Bondoukou" style="width:150px; height:150px; border-radius:50%; border:3px solid #FFD700; display:block; margin:20px auto;">
     <h1>👑 HAMED LE ROI HACKER  👑</h1>
-    
-    <img src="hamed.jpg" alt="Hamed Roi de Bondoukou">
     
     <p>
         Roi de Bondoukou<br>
         Ambassadeur de la culture Gontougo<br>
         Fier fils du Zanzan
     </p>    <h2>👑 Mes Projets Hacker 👑</h2>
-    <div class="project">
+    <div class="project"><p style="color:#FFD700; margin:20px 0; font-size:18px;">
+    👥 <span id="visites">0</span> Visiteurs Royaux
+</p>
     <a href="https://github.com/yao-hamed/hamed-roi-bondoukou" style="text-decoration:none; color:#FFD700;">
         <h3>🔥 Site Web Royal</h3>
     </a>
@@ -99,5 +106,11 @@
     <div class="footer">
         © 2026 HAMED ROI DE BONDOUKOU
     </div>
-</body>
+</body><script>
+fetch('https://api.countapi.xyz/hit/hamed-roi-bondoukou/visites')
+.then(response => response.json())
+.then(data => {
+    document.getElementById('visites').innerText = data.value;
+});
+</script>
 </html>
